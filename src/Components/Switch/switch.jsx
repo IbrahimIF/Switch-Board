@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */ // another way of removing the 'is props validation error'
 
 import React from 'react';
-import './App.css'
+import './switch.css'
 
 function Switch({ onClick }) {
 

@@ -14,11 +14,22 @@
 }
 
 
+
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  padding: 0;
+
+  overflow: hidden;
+  user-select: none;
+  outline: none;
+  background: #d5d5d5;
   min-width: 320px;
   min-height: 100vh;
 }
 
+
+*{
+  margin: 0;
+  padding: 0;
+}

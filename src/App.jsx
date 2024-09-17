@@ -1,7 +1,15 @@
 
 import './App.css'
+import Switch from './Light-switch';
+import light from './assets/audio/light-switch-81967.mp3';
 
 function App() {
+
+  const switchOne = () => {
+    const audio = new Audio(light);
+    audio.play();
+  };
+
   return (
     <>
     {/* 
@@ -11,37 +19,10 @@ function App() {
         </div>
         */}
       <div className="container">
-
-          <label className="wrap">
-            <input className="input" type="checkbox" />
-            <div className="panel">
-
-              <div className="hole">
-                  <div className="switch">
-                    <div className="shadow-box top">
-                      <div className="shadow top"></div>
-                    </div>
-                    <div className="shadow-box bottom">
-                      <div className="shadow bottom"></div>
-                    </div>
-
-                    <div className="switch_top">
-                      <div className="outsetTop"></div>
-                    </div>
-                    <div className="switch_bottom">
-                      <div className="outsetBottom"></div>
-                    </div>
-
-                    <div className="indicators_container">
-                      <div className="indicator indicator-off"></div>
-                      <div className="indicator indicator-on"></div>
-                    </div>
-
-                  </div>
-                </div>
-            </div>
-          </label>
-
+        <Switch onClick={switchOne}/>
+        <Switch/>
+        <Switch/>
+        <Switch/>
       </div>
     </>
   )

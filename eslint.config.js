@@ -29,9 +29,20 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       'react/jsx-no-target-blank': 'off',
+      'react/prop-types': 'off', // removes the 'is missing props validation' error
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
+      ],
+      'no-unused-vars': [
+        'error',
+        {
+          vars: 'all',
+          args: 'after-used',
+          caughtErrors: 'all',
+          ignoreRestSiblings: false,
+          reportUsedIgnorePattern: false,
+        },
       ],
     },
   },

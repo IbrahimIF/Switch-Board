@@ -5,22 +5,26 @@
   flex-wrap: wrap;
   gap: 100px 90px;
   position: fixed;
-  left: 310px;
-  width: 643px;
+  left: 10px;
+  width: 100%;
   top: 312px;
+  }
+
+  .panel, .shadow-box, .indicators_container {
+    pointer-events: none; /* Prevent clicks on the outer elements */
+  }
+  
+  .switch, .hole {
+    pointer-events: auto; /* Allow clicks on the switch only */
+    cursor: pointer;
   }
   
 
-
-.wrap {
-  height: 100%;
+.panel {
+  
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.panel {
-  display: flex;
   background-color: #fff;
   border-radius: 3px;
   box-shadow:
@@ -63,19 +67,20 @@
 }
 
 .shadow-box {
-  height: 208px;
+  height: 97px;
   left: 47px;
   overflow: hidden;
   position: absolute;
-  width: 100px;
+  width: 26px;
   z-index: 1;
 }
 .shadow-box.top {
-  top: -123px;
+  top: -4px;
 }
 
+
 .shadow-box.bottom {
-  top: -104px;
+  top: 2px;
 }
 
 .shadow {
@@ -91,27 +96,26 @@
 }
 .shadow.top {
   bottom: 20px;
-  filter: blur(10px);
-  left: -70px;
-  opacity: 1;
-  transform: rotate(20deg);
+  filter: blur(0px);
+  left: -90px;
+  opacity: 0.1;
+  transform: rotate(0deg);
 }
 
 .shadow.bottom {
   bottom: 0;
-  left: -90px;
-  filter: blur(0px);
-  opacity: 0.5;
-  transform: rotate(0deg);
+  left: -70px;
+  filter: blur(10px);
+  opacity: 1;
+  transform: rotate(-20deg);
 }
 
 
 .switch_top {
-  background-color: #eee;
+  background-color: #fff;
   box-shadow:
-    inset 0 0 6px rgba(0, 0, 0, 0.05),
-    inset 0 0 24px rgba(0, 0, 0, 0.025),
-    inset -16px -16px 36px rgba(0, 0, 0, 0.1);
+    inset 0 0 3px rgba(0, 0, 0, 0.1),
+    inset 0 0 12px rgba(0, 0, 0, 0.05);
   height: 50%;
   left: 0;
   position: absolute;
@@ -125,12 +129,13 @@
 .outsetTop {
   background-color: #fff;
   background-image: linear-gradient(90deg, #fff 0%, #f7f7f7 100%);
-  height: 5px;
+  height: 0;
   transition: height 0.25s ease;
 }
 
+
 .switch_bottom {
-  background-color: #fff;
+  background-color: #eee;
   box-shadow:
     inset 0 0 3px rgba(0, 0, 0, 0.1),
     inset 0 0 12px rgba(0, 0, 0, 0.05);
@@ -151,7 +156,7 @@
   box-shadow:
     inset 0 0 3px rgba(0, 0, 0, 0.1),
     inset 0 0 12px rgba(0, 0, 0, 0.05);
-  height: 0px;
+  height: 10px;
   position: absolute;
   transition: height 0.25s ease;
   width: 100%;
@@ -164,40 +169,40 @@
 
 .input[type="checkbox"]:checked {
   position: absolute;
-  + .panel {
+  + .hole {
     .switch {
       .switch_top {
-        background-color: #fff;
+        background-color: #eee;
         box-shadow:
-          inset 0 0 3px rgba(0, 0, 0, 0.1),
-          inset 0 0 12px rgba(0, 0, 0, 0.05);
+          inset 0 0 6px rgba(0, 0, 0, 0.05),
+          inset 0 0 24px rgba(0, 0, 0, 0.025),
+          inset -16px -16px 36px rgba(0, 0, 0, 0.1);
 
         .outsetTop {
-          height: 0;
+          height: 5px;
         }
       }
 
       .switch_bottom {
-        background-color: #eee;
+        background-color: #fff;
 
         .outsetBottom {
-          height: 10px;
+          height: 0px;
         }
       }
 
       .shadow.top {
-        bottom: 20px;
-        filter: blur(0px);
-        left: -90px;
-        opacity: 0.1;
-        transform: rotate(0deg);
+        filter: blur(10px);
+        left: -70px;
+        opacity: 1;
+        transform: rotate(20deg);
       }
 
       .shadow.bottom {
-        left: -70px;
-        filter: blur(10px);
-        opacity: 1;
-        transform: rotate(-20deg);
+        left: -90px;
+        filter: blur(0px);
+        opacity: 0.5;
+        transform: rotate(0deg);
       }
     }
 
@@ -227,17 +232,17 @@
   filter: brightness(1.5);
 }
 
-.input[type="checkbox"]:checked + .panel .indicator-on {
+.input[type="checkbox"]:checked + .hole .indicator-on {
   background-color: green;
   box-shadow: 0 -0.06em 0.1em hsl(127.6, 100%, 23.3%) inset, 
   0 -0.15em 0.4em hsl(127.6, 100%, 27.8%) inset, 
-  0 0.05em 0.05em hsl(128.1, 100%, 29.2%) inset, 
+  0 0.05em 0.05em hsl(128, 28%, 43%) inset, 
   0.05em 0 0.1em hsl(128.1, 100%, 29.2%) inset, 
   -0.05em 0 0.1em hsl(127.8, 100%, 22.5%) inset, 
   0 0.1em 0.4em hsl(128.3, 100%, 65.9%) inset;
 }
 
-.input + .panel .indicator-off {
+.input + .hole .indicator-off {
   background-color: red;
   box-shadow: 0 -0.06em 0.1em hsl(0, 100%, 26.3%) inset,
   0 -0.15em 0.4em hsl(0, 100%, 16.7%) inset, 
@@ -248,7 +253,7 @@
 }
 
 
-.input[type="checkbox"]:checked + .panel .indicator-off {
+.input[type="checkbox"]:checked + .hole .indicator-off {
   background-color: gray;
   box-shadow: 0 -0.06em 0.1em hsl(0, 0%, 31.8%) inset,
   0 -0.15em 0.4em hsl(0, 0%, 37.6%) inset,
@@ -258,7 +263,7 @@
   0 0.1em 0.4em hsl(0, 0%, 51.8%) inset;
 }
 
-.input + .panel .indicator-on {
+.input + .hole .indicator-on {
   background-color: gray;
   box-shadow: 0 -0.06em 0.1em hsl(0, 0%, 31.8%) inset,
   0 -0.15em 0.4em hsl(0, 0%, 37.6%) inset,

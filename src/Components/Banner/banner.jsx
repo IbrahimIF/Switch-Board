@@ -1,19 +1,21 @@
 
 //import React, { } from 'react';
 import './banner.css'
+import Link from '../Github/Link';
 
 
 function Banner() {
   return (
-        <div className="banner_container">
-          <div className="table center">
-            <div className="monitor-wrapper center">
-                <div className="monitor center">
-                    <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-          </div>
+    <>
+    <div className="table">
+      <div className="monitor-wrapper">
+        <div className="monitor">
+          <p className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
+      </div>
+    </div>
+    <Link/>
+    </>
   )
 }
 

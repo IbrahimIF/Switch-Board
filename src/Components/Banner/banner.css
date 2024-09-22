@@ -1,11 +1,10 @@
 
-
 .table{
     display: flex;
     justify-content: center;
     justify-items: center;
     align-items: center;
-    width: 790px;
+    width: 92%;
     height: 150px;
     background-color: #d4e5ff;
 }
@@ -16,7 +15,7 @@
     justify-items: center;
     align-items: center;
     background: #050321;
-    width: 770px;
+    width: 98%;
     height: 130px;
     box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.30);
 }
@@ -24,7 +23,7 @@
 .monitor{
     display: flex;
     align-items: center;
-    width: 700px;
+    width: 95%;
     height: 100px;
     background-color: #344151;
     overflow: hidden;
@@ -38,11 +37,15 @@
     font-size: 50px;
     position: relative;
     display: inline-block;
-    animation: move 20s infinite linear;
+    animation: move 15s infinite linear;
     color: #cecece;
 }
 
 @keyframes move {
-  from {left: 800px;}
-  to {left: -4800px;}
-}
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }

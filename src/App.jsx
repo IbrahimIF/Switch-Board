@@ -1,6 +1,6 @@
 
 import './App.css'
-import React, { useState, useEffect } from 'react';
+import {useState} from 'react';
 import Switch from './Components/Switch/switch';
 import Banner from './Components/Banner/banner';
 /* Audio imports */
@@ -10,6 +10,7 @@ import two from './assets/audio/Switch sound/Handsome Jack.mp3';
 import three from './assets/audio/Switch sound/IDubbbzTV.mp3';
 import four from './assets/audio/Switch sound/Minecraft cow sound effect.mp3';
 import five from './assets/audio/Switch sound/Roblox Death Sound - OOF.mp3';
+
 
 function App() {
   const [Start, setStart] = useState(true);
@@ -84,7 +85,6 @@ function App() {
   return (
     <>
       <div className="container">
-
         <div className="banner_container">
           <Banner />
         </div>

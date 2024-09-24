@@ -12,7 +12,7 @@ function Link() {
     <div className="linkContainer">
       <ul className="gitButton">
       <li className="icon-content">
-        <a href="https://github.com/IbrahimIF/MERN" aria-label="GitHub" data-social="github">
+        <a href="https://github.com/IbrahimIF/Switch-Board" aria-label="GitHub" data-social="github">
           <div className="filled"></div>
           <FontAwesomeIcon icon={faGithub} />
         </a>

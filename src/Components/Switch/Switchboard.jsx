@@ -16,7 +16,7 @@ import nine from '../../assets/audio/Switch sound/discord-call-sound.mp3';
 import nine1 from '../../assets/audio/Switch sound/discord-notification.mp3';
 import ten from '../../assets/audio/Switch sound/get-out-tuco.mp3';
 
-function App() {
+function SwitchBoard() {
   const [Start, setStart] = useState(true);
   const [counter, setCounter] = useState(0);
 
@@ -37,133 +37,65 @@ function App() {
     audio.play();
   };
 
-  // Numbered Audios below
-
-  const One = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio1.play();
+const toggleAudio = (audio) => {
+  setStart((prevStart) => {
+    if (prevStart) {
+      audio.play();
     } else {
-      audio1.pause();
-      audio1.currentTime = 0;
+      audio.pause();
+      audio.currentTime = 0;
     }
-  };
+    return !prevStart;
+  });
+};
 
-  const Two = () => {
-    setStart(!Start);
+const One = () => toggleAudio(audio1, setCounter(1));
+const Two = () => toggleAudio(audio2, setCounter(2));
+const Three = () => toggleAudio(audio3, setCounter(3));
+const Four = () => toggleAudio(audio4, setCounter(4));
+const Five = () => toggleAudio(audio5, setCounter(5));
+const Six = () => toggleAudio(audio6, setCounter(6));
+const Seven = () => toggleAudio(audio7, setCounter(7));
+const Eight = () => toggleAudio(audio8, setCounter(8));
+const Nine = () => {
+  /*
+  
+  if (Start && (audio9.paused || audio91.paused)) {
+    audio9.paused ? audio9.play() : audio91.play();
+  } else {
+    audio9.pause();
+    audio9.currentTime = 0;
+    audio91.pause();
+    audio91.currentTime = 0;
+  }
+  setStart(!Start);
+  */
 
-    if (Start) {
-      audio2.play();
+  if (Start) {
+    if (counter === 9.1){
+      setCounter(9)
+      audio9.play()
     } else {
-      audio2.pause();
-      audio2.currentTime = 0;
+      setCounter(9.1)
+      audio91.play()
+      
     }
-  };
-
-  const Three = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio3.play();
-    } else {
-      audio3.pause();
-      audio3.currentTime = 0;
-    }
-  };
-
-  const Four = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio4.play();
-    } else {
-      audio4.pause();
-      audio4.currentTime = 0;
-    }
-  };
-
-  const Five = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio5.play();
-    } else {
-      audio5.pause();
-      audio5.currentTime = 0;
-    }
-  };
-
-  const Six = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio6.play();
-    } else {
-      audio6.pause();
-      audio6.currentTime = 0;
-    }
-  };
-
-
-  const Seven = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio7.play();
-    } else {
-      audio7.pause();
-      audio7.currentTime = 0;
-    }
-  };
-
-
-  const Eight = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio8.play();
-    } else {
-      audio8.pause();
-      audio8.currentTime = 0;
-    }
-  };
-
-
-  const Nine = () => {
-    setStart(!Start);
-
-    if (Start && counter % 2 === 0 ) {
-      audio9.play();
-      setCounter((counter) => counter + 1);
-    
-    } else if (Start) {
-      audio91.play();
-      setCounter((counter) => counter + 1);
-    } else {
-      audio9.pause();
-      audio9.currentTime = 0;
-      audio91.pause();
-      audio91.currentTime = 0;
-    }
-  };
-
-  const Ten = () => {
-    setStart(!Start);
-
-    if (Start) {
-      audio10.play();
-    } else {
-      audio10.pause();
-      audio10.currentTime = 0;
-    }
-  };
+  } else {
+    audio9.pause();
+    audio9.currentTime = 0;
+    audio91.pause();
+    audio91.currentTime = 0;
+  }
+  setStart(!Start); 
+};
+const Ten = () => toggleAudio(audio10, counter == 10);
 
 
   return (
     <>
           <Switch onClick={() => {switchSound(); One();}}/>
           <Switch onClick={() => {switchSound(); Two();}}/>
+            {counter}
           <Switch onClick={() => {switchSound(); Three();}}/>
           <Switch onClick={() => {switchSound(); Four();}}/>
           <Switch onClick={() => {switchSound(); Five();}}/>
@@ -176,4 +108,4 @@ function App() {
   )
 }
 
-export default App
+export default SwitchBoard

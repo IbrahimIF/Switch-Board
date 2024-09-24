@@ -49,3 +49,12 @@
       transform: translateX(-100%);
     }
   }
+
+
+
+  @media screen and (max-width: 766px) {
+    .table{
+      width: 98%;
+    }
+  }
+  

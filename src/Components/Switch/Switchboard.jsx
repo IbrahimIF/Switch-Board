@@ -18,10 +18,8 @@ import ten from '../../assets/audio/Switch sound/get-out-tuco.mp3';
 
 function SwitchBoard() {
   const [Start, setStart] = useState(true);
-  const [active, setActive] = useState(0);
   const [counter, setCounter] = useState(0);
-  const [prevCounter, setPrevCounter] = useState(0);
-  const [target, setTarget] = useState(0);
+  const [discordCounter, setDiscordCounter] = useState(9);
 
   const [audio1] = useState(new Audio(one));
   const [audio2] = useState(new Audio(two));
@@ -42,92 +40,37 @@ function SwitchBoard() {
     audio.play();
   };
 
-  const toggleSwitch = (audio, targetCounter) => { // happens when counter is pressed
-
-    if (counter === 0) { // play audio when switch is pressed (has to be 0)
-      setActive(1);
-      setCounter(targetCounter);
-      setPrevCounter(counter);
-      setTarget(prevCounter);
-      audio.play();
-    } else if (counter !== targetCounter){ // play audio when next switch is pressed
-      setCounter(targetCounter);
-      setPrevCounter(counter);
-      setTarget(prevCounter);
-      audio.play();
-      audioArray[target].pause();
-      audioArray[target].currentTime = 0;
-    }else if (counter === targetCounter){ // stop audio when switch is pressed again
-      setCounter(0);
-      setActive(0);
-      audio.pause();
-      audio.currentTime = 0;
-    }else if (target !== counter){ // stop all audio when next switch is pressed
-      audio.pause();
-      audio.currentTime = 0;
-       setTarget(prevCounter);
-    }
+  const toggleSwitch = (audio, targetCounter) => {
+    setCounter((prevCounter) => {
+      if (prevCounter === 0) {
+        // Play audio when switch is pressed the first time
+        audio.play();
+        return targetCounter;
+      } else if (prevCounter !== targetCounter) {
+        // Play new audio when a different switch is pressed
+        audioArray[prevCounter - 1].pause();
+        audioArray[prevCounter - 1].currentTime = 0;
+        audio.play();
+        return targetCounter;
+      } else {
+        // Stop audio when switch is pressed again
+        audio.pause();
+        audio.currentTime = 0;
+        return 0;
+      }
+    });
   };
 
-  // (Play audio when switch is pressed) // counter !=0 set active 1
-  // (pause audio when switch pressed again) // counter !=0 set counter to 0
-  // (pause audio when next switch pressed) // 
-   /* 
-   if (counter === 0) { 
-      setCounter(targetCounter)
-      audio.pause();
-      audio.currentTime = 0;
-      audio.play();
-      setActive(targetCounter);
-    } else if (counter === targetCounter) {
-      setCounter(0);
-      audio.pause();
-      audio.currentTime = 0;
-      setActive(targetCounter);
-    } else if (counter !== targetCounter) {
-      audio.pause();
-      audio.currentTime = 0;
-      audio.play();
-      setCounter(targetCounter);
-      setActive(targetCounter);
-    } else {
-      setCounter(0);
-    }
-
-   //
-
-      if (counter !== targetCounter) {
-      // If the counter matches the target counter, reset the audio
-      audio.play();
-      setActive(targetCounter);
-    } else if (counter === 0) {
-      targetCounter = 0;
-      audio.pause();
-      audio.currentTime = 0;
-    } else if () {
-      targetCounter = 0;
-      audio.pause();
-      audio.currentTime = 0;
-    } else {
-      // If the counter doesn't match the target counter, pause audio
-      audio.pause();
-      audio.currentTime = 0;
-      setActive(0)
-    } 
 
 
-
-   */
-  
-
-const Nine = () => {
-
+  const Nine = () => {
   if (Start) {
-    if (target === 9.1){
-      setCounter(9)
+    setCounter(9)
+    if (discordCounter === 9.1){
+      setDiscordCounter(9)
       audio9.play()
     } else {
-      setCounter(9.1)
+      setDiscordCounter(9.1)
       audio91.play()
     }
   } else {
@@ -135,20 +78,15 @@ const Nine = () => {
     audio9.currentTime = 0;
     audio91.pause();
     audio91.currentTime = 0;
-    setCounter(0)
+    setCounter(0);
   }
   setStart(!Start); 
-};
+  };
 
   return (
     <>
       <Switch onClick={() => {switchSound(); toggleSwitch(audio1, 1)}} isActive={counter === 1} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio2, 2)}} isActive={counter === 2} />
-        <span>
-          counter: {counter}
-          target: {target}
-          active: {active}
-        </span>
       <Switch onClick={() => {switchSound(); toggleSwitch(audio3, 3)}} isActive={counter === 3} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio4, 4)}} isActive={counter === 4} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio5, 5)}} isActive={counter === 5} />

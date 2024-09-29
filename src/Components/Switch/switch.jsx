@@ -1,12 +1,12 @@
 import './switch.css'
 
-function Switch({ onClick }) {
+function Switch({ onClick, isActive }) {
 
 
   return (
     <>
       <label className="panel">
-        <input className="input" type="checkbox" onChange={onClick} />
+        <input className="input" type="checkbox" checked={isActive} onChange={onClick} />
         <div className="hole">
           <div className="switch">
             <div className="shadow-box top">

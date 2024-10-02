@@ -37,8 +37,9 @@
     font-size: 50px;
     position: relative;
     display: inline-block;
-    animation: move 15s infinite linear;
+    animation: move 12s infinite linear;
     color: #cecece;
+    width: 200%;
 }
 
 @keyframes move {
@@ -46,7 +47,7 @@
       transform: translateX(100%);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(-200%);
     }
   }
 

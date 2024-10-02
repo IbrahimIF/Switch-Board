@@ -15,10 +15,16 @@ import eight from '../../assets/audio/Switch sound/crazy-realistic-knocking-soun
 import nine from '../../assets/audio/Switch sound/discord-call-sound.mp3';
 import nine1 from '../../assets/audio/Switch sound/discord-notification.mp3';
 import ten from '../../assets/audio/Switch sound/get-out-tuco.mp3';
+import eleven from '../../assets/audio/Switch sound/Darth vader screaming noooo.mp3';
+import twelve from '../../assets/audio/Switch sound/vine-boom.mp3';
+import thirteen from '../../assets/audio/Switch sound/ur-phone-ringing.mp3';
+import fourteen from '../../assets/audio/Switch sound/deg-deg_4M6Cojn.mp3';
+import fifteen from '../../assets/audio/Switch sound/error_CDOxCYm.mp3';
 
-function SwitchBoard() {
+
+
+function SwitchBoard({counter, setCounter}) {
   const [Start, setStart] = useState(true);
-  const [counter, setCounter] = useState(0);
   const [discordCounter, setDiscordCounter] = useState(9);
 
   const [audio1] = useState(new Audio(one));
@@ -32,8 +38,13 @@ function SwitchBoard() {
   const [audio9] = useState(new Audio(nine));
   const [audio91] = useState(new Audio(nine1));
   const [audio10] = useState(new Audio(ten));
+  const [audio11] = useState(new Audio(eleven));
+  const [audio12] = useState(new Audio(twelve));
+  const [audio13] = useState(new Audio(thirteen));
+  const [audio14] = useState(new Audio(fourteen));
+  const [audio15] = useState(new Audio(fifteen));
 
-  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10];
+  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15];
 
   const switchSound = () => {
     const audio = new Audio(light);
@@ -62,7 +73,6 @@ function SwitchBoard() {
   };
 
 
-
   const Nine = () => {
   if (Start) {
     setCounter(9)
@@ -84,7 +94,7 @@ function SwitchBoard() {
   };
 
   return (
-    <>
+  <>
       <Switch onClick={() => {switchSound(); toggleSwitch(audio1, 1)}} isActive={counter === 1} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio2, 2)}} isActive={counter === 2} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio3, 3)}} isActive={counter === 3} />
@@ -93,9 +103,14 @@ function SwitchBoard() {
       <Switch onClick={() => {switchSound(); toggleSwitch(audio6, 6)}} isActive={counter === 6} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio7, 7)}} isActive={counter === 7} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio8, 8)}} isActive={counter === 8} />
-      <Switch onClick={() => {switchSound(); Nine()}} isActive={counter === 9 || counter == 9.1} />
+      <Switch onClick={() => {switchSound(); Nine()}} isActive={counter === 9} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio10, 10)}} isActive={counter === 10} />
-    </>
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio11, 11)}} isActive={counter === 11} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio12, 12)}} isActive={counter === 12} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio13, 13)}} isActive={counter === 13} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio14, 14)}} isActive={counter === 14} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio15, 15)}} isActive={counter === 15} />
+  </>
   )
 }
 

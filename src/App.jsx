@@ -1,25 +1,19 @@
 
-import './App.css'
-import { useState} from 'react';
-import SwitchBoard from './Components/Switch/Switchboard';
-import Banner from './Components/Banner/banner';
-import Hidden from './Components/Hidden/Hidden';
+import './App.css';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Hub from './Components/Hub';
+import RandomScreen from './Components/RandomScreen/RandomScreen';
+
 function App() {
-  const [counter, setCounter] = useState(0);
 
   return (
     <>
-      <div className="container">
-        <div className="banner_container">
-          <Banner counter={counter}/>
-        </div>
-        {counter}
-
-        <Hidden counter={counter} setCounter={setCounter}/>
-        <div className="switch_container"  >
-          <SwitchBoard counter={counter} setCounter={setCounter} />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Hub />} />
+          <Route path="/Random" element={<RandomScreen />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

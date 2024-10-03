@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Hidden.css';
 import Laugh from '../../assets/audio/Switch sound/Lancer Laugh.mp3';
 
@@ -15,6 +16,7 @@ import Lancer3 from '../../assets/image/Lancer_Ending.gif';
 import Lancer3_static from '../../assets/image/Lancer_Ending.png';
 
 function Hidden({counter, setCounter}) {
+const navigate = useNavigate();
 const [isGoku, setIsGoku] = useState(false);
 const [isLancer, setIsLancer] = useState(false);
 const [currentGifIndex, setCurrentGifIndex] = useState(0);
@@ -54,11 +56,13 @@ useEffect(() => {
             clearTimeout(gifTimer);
         };
 
-    } else {
+    } if(counter === 18){
+        navigate("/Random");
+    }else {
         setIsGoku(false)
         setIsLancer(false)
     }
-}, [counter, currentGifIndex, setCounter, audioLaugh]);
+}, [counter, currentGifIndex, setCounter, audioLaugh, navigate]);
 
 return (
     <>

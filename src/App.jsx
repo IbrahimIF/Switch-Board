@@ -1,31 +1,11 @@
 
 import './App.css'
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import SwitchBoard from './Components/Switch/Switchboard';
 import Banner from './Components/Banner/banner';
-import Goku from './assets/image/Thate One Goku PNG.png';
-
-
+import Hidden from './Components/Hidden/Hidden';
 function App() {
   const [counter, setCounter] = useState(0);
-  const [isGoku, setIsGoku] = useState(false);
-
-
-  useEffect(() => {
-    if (counter === 7){
-        setIsGoku(true);
-        const timer = setTimeout(() => {
-          setCounter(0); // Reset counter after 2 seconds
-        }, 6100);
-      return () => {
-        clearTimeout(timer);
-      };
-
-    } else {
-      setIsGoku(false)
-    }
-  }, [counter]);
-
 
   return (
     <>
@@ -35,13 +15,7 @@ function App() {
         </div>
         {counter}
 
-        {/* Goku image div */}
-        {isGoku && (
-          <div className="goku_image fade-in">
-            <img src={Goku} alt="Goku" />
-          </div>
-        )}
-
+        <Hidden counter={counter} setCounter={setCounter}/>
         <div className="switch_container"  >
           <SwitchBoard counter={counter} setCounter={setCounter} />
         </div>

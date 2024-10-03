@@ -20,7 +20,8 @@ import twelve from '../../assets/audio/Switch sound/vine-boom.mp3';
 import thirteen from '../../assets/audio/Switch sound/ur-phone-ringing.mp3';
 import fourteen from '../../assets/audio/Switch sound/deg-deg_4M6Cojn.mp3';
 import fifteen from '../../assets/audio/Switch sound/error_CDOxCYm.mp3';
-
+import sixteen from '../../assets/audio/Switch sound/Lancer.mp3';
+import seventeen from '../../assets/audio/Switch sound/Goat Scream - Sound Effect (HD).mp3';
 
 
 function SwitchBoard({counter, setCounter}) {
@@ -43,8 +44,10 @@ function SwitchBoard({counter, setCounter}) {
   const [audio13] = useState(new Audio(thirteen));
   const [audio14] = useState(new Audio(fourteen));
   const [audio15] = useState(new Audio(fifteen));
+  const [audio16] = useState(new Audio(sixteen));
+  const [audio17] = useState(new Audio(seventeen));
 
-  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15];
+  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15, audio16, audio17];
 
   const switchSound = () => {
     const audio = new Audio(light);
@@ -63,12 +66,16 @@ function SwitchBoard({counter, setCounter}) {
         audioArray[prevCounter - 1].currentTime = 0;
         audio.play();
         return targetCounter;
+      } else if (counter === 0) {
+        audio.pause();
+        audio.currentTime = 0;
+        return 0;
       } else {
         // Stop audio when switch is pressed again
         audio.pause();
         audio.currentTime = 0;
         return 0;
-      }
+      } 
     });
   };
 
@@ -110,6 +117,8 @@ function SwitchBoard({counter, setCounter}) {
       <Switch onClick={() => {switchSound(); toggleSwitch(audio13, 13)}} isActive={counter === 13} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio14, 14)}} isActive={counter === 14} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio15, 15)}} isActive={counter === 15} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio16, 16)}} isActive={counter === 16} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio17, 17)}} isActive={counter === 17} />
   </>
   )
 }

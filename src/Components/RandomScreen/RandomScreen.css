@@ -1,5 +1,5 @@
-.container3 {
-  position: absolute;
+.randomContainer {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,11 +12,6 @@
   overflow: hidden;
 }
 
-.horror {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-}
 
 .media {
   position: relative;
@@ -35,12 +30,7 @@ iframe {
   overflow: hidden;
 }
 
-
-.counter{
-  z-index: 5;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 50px;
-color: white;
+/* Ensure all content inside RandomScreen respects the overflow: hidden */
+.randomContainer * {
+  overflow: hidden;
 }

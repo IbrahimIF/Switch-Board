@@ -58,7 +58,9 @@ useEffect(() => {
 
     } if(counter === 18){
         navigate("/Random");
-    }else {
+    } if(counter === 23){
+        navigate("/Random");
+    } else {
         setIsGoku(false)
         setIsLancer(false)
     }

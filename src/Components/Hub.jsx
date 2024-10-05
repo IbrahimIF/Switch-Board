@@ -1,11 +1,11 @@
 
 import '../App.css'
-import { useState} from 'react';
+
 import SwitchBoard from './Switch/Switchboard';
 import Banner from './Banner/banner';
 import Hidden from './Hidden/Hidden';
-function Hub() {
-  const [counter, setCounter] = useState(0);
+function Hub({counter, setCounter}) {
+
 
   return (
     <>

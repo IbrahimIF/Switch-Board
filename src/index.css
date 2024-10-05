@@ -19,13 +19,11 @@
 body {
   margin: 0;
   padding: 0;
-
   overflow: hidden;
   user-select: none;
   outline: none;
   background: #d5d5d5;
   min-width: 320px;
-  min-height: 100vh;
 }
 
 
@@ -34,3 +32,15 @@ body {
   padding: 0;
 }
 
+
+
+.app-container {
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
+}

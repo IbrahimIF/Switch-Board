@@ -4,24 +4,24 @@ import Switch from './switch';
 
 /* Audio imports */
 import light from '../../assets/audio/light-switch.mp3';
-import one from '../../assets/audio/Switch sound/Youre too slow.mp3';
-import two from '../../assets/audio/Switch sound/Handsome Jack.mp3';
+import one from '../../assets/audio/Switch sound/Youre-too-slow-Sonic.mp3';
+import two from '../../assets/audio/Switch sound/Handsome-Jack.mp3';
 import three from '../../assets/audio/Switch sound/IDubbbzTV.mp3';
-import four from '../../assets/audio/Switch sound/Minecraft cow sound effect.mp3';
-import five from '../../assets/audio/Switch sound/Roblox Death Sound - OOF.mp3';
-import six from '../../assets/audio/Switch sound/What the dog doin.mp3';
-import seven from '../../assets/audio/Switch sound/drip-goku-meme-song-original-dragon-ball-super-music-clash-of-gods-in-description.mp3';
-import eight from '../../assets/audio/Switch sound/crazy-realistic-knocking-sound-troll-twitch-streamers_small.mp3';
+import four from '../../assets/audio/Switch sound/Minecraft-Cow.mp3';
+import five from '../../assets/audio/Switch sound/Roblox-OOF.mp3';
+import six from '../../assets/audio/Switch sound/What-the-dog-doin.mp3';
+import seven from '../../assets/audio/Switch sound/Goku-drip.mp3';
+import eight from '../../assets/audio/Switch sound/Realistic-Knocking.mp3';
 import nine from '../../assets/audio/Switch sound/discord-call-sound.mp3';
 import nine1 from '../../assets/audio/Switch sound/discord-notification.mp3';
 import ten from '../../assets/audio/Switch sound/get-out-tuco.mp3';
-import eleven from '../../assets/audio/Switch sound/Darth vader screaming noooo.mp3';
+import eleven from '../../assets/audio/Switch sound/Darth-Vader-Screaming.mp3';
 import twelve from '../../assets/audio/Switch sound/vine-boom.mp3';
 import thirteen from '../../assets/audio/Switch sound/ur-phone-ringing.mp3';
-import fourteen from '../../assets/audio/Switch sound/deg-deg_4M6Cojn.mp3';
-import fifteen from '../../assets/audio/Switch sound/error_CDOxCYm.mp3';
+import fourteen from '../../assets/audio/Switch sound/Rickrolled.mp3';
+import fifteen from '../../assets/audio/Switch sound/error.mp3';
 import sixteen from '../../assets/audio/Switch sound/Lancer.mp3';
-import seventeen from '../../assets/audio/Switch sound/Goat Scream - Sound Effect (HD).mp3';
+import seventeen from '../../assets/audio/Switch sound/Goat-Scream.mp3';
 import empty from '../../assets/audio/empty-sound.mp3';
 
 
@@ -48,8 +48,19 @@ function SwitchBoard({counter, setCounter}) {
   const [audio16] = useState(new Audio(sixteen));
   const [audio17] = useState(new Audio(seventeen));
   const [audio18] = useState(new Audio(empty));
+  const [audio19] = useState(new Audio(empty));
+  const [audio20] = useState(new Audio(empty));
+  const [audio21] = useState(new Audio(empty));
+  const [audio22] = useState(new Audio(empty));
+  const [audio23] = useState(new Audio(empty));
+  const [audio24] = useState(new Audio(empty));
+  const [audio25] = useState(new Audio(empty));
+  const [audio26] = useState(new Audio(empty));
+  const [audio27] = useState(new Audio(empty));
+  const [audio28] = useState(new Audio(empty));
 
-  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15, audio16, audio17, audio18];
+  const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15, audio16, audio17, audio18,
+    audio19, audio20, audio21, audio22, audio23, audio24, audio25, audio26, audio27, audio28];
 
   const switchSound = () => {
     const audio = new Audio(light);
@@ -122,6 +133,16 @@ function SwitchBoard({counter, setCounter}) {
       <Switch onClick={() => {switchSound(); toggleSwitch(audio16, 16)}} isActive={counter === 16} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio17, 17)}} isActive={counter === 17} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio18, 18)}} isActive={counter === 18} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio19, 19)}} isActive={counter === 19} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio20, 20)}} isActive={counter === 20} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio21, 21)}} isActive={counter === 21} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio22, 22)}} isActive={counter === 22} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio23, 23)}} isActive={counter === 23} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio24, 24)}} isActive={counter === 24} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio25, 25)}} isActive={counter === 25} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio26, 26)}} isActive={counter === 26} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio27, 27)}} isActive={counter === 27} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio28, 28)}} isActive={counter === 28} />
   </>
   )
 }

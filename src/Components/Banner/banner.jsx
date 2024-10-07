@@ -11,7 +11,9 @@ function Banner({counter}) {
   useEffect(() => {
     if (counter === 10){
       setText("GEEEEETTTT OOOOOOOUT!!!!!!!!!!!!!")
-    } else {
+    } if (counter === 27){
+      setText("PRESS THE COUNTER 2 MORE TIMES TO SPAWN MORE RAGDOLLS")
+    }  else {
       setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     }
   }, [counter]);

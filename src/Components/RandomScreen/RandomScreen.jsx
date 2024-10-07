@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect,} from "react";
 import "./RandomScreen.css";
+import michaelBay from '../../assets/video/Michael Bay.mp4'
 function RandomScreen({counter, setCounter}) {
   const navigate = useNavigate();
   // Media state
@@ -10,13 +11,26 @@ function RandomScreen({counter, setCounter}) {
   // Choose random media
   useEffect(() => {
     function chooseRandomMedia() {
-      if (counter === 23) {
-        setTimeoutDuration(25000); // Set the timeout to 25 seconds
+      if (counter === 14) {
+        setTimeoutDuration(20000); // Set the timeout to 20 seconds
         return (
           <div style={{ pointerEvents: 'none' }}>
-            <iframe width="900" height="655" alt="EvenLongerVideo" 
-            src='https://www.youtube.com/embed/bmfudW7rbG0?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=5' 
-            title="YouTube video player" allow=" autoplay;  encrypted-media;"></iframe>
+            <iframe 
+              width="900" 
+              height="655" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=7" 
+              title="YouTube video player" 
+              allow="autoplay; encrypted-media;">
+            </iframe>
+          </div>
+        );
+      }if (counter === 23) {
+        setTimeoutDuration(13000); // Set the timeout to 13 seconds
+        return (
+          <div style={{ pointerEvents: 'none' }}>
+            <video width="900" height="655" autoPlay controls playsInline style={{ objectFit: 'cover' }}>
+              <source src={michaelBay} type="video/mp4" /> Your browser does not support the video tag.
+            </video>
           </div>
         );
       } else {
@@ -49,14 +63,15 @@ function RandomScreen({counter, setCounter}) {
               { type: 'NormalVideo', url: 'https://www.youtube.com/embed/h7FJ9ddRNdA?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'NormalVideo', url: 'https://www.youtube.com/embed/v3Sj7T9D1_Q?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'NormalVideo', url: 'https://www.youtube.com/embed/19DY8iNYXSs?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
-              { type: 'NormalVideo', url: 'https://www.youtube.com/embed/Sj10ELmeJL8?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&starts=151'},
-              { type: 'NormalVideo', url: 'https://www.youtube.com/embed/tPsJPtrMpKA?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&starts=4'},
+              { type: 'NormalVideo', url: 'https://www.youtube.com/embed/Sj10ELmeJL8?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=151'},
+              { type: 'NormalVideo', url: 'https://www.youtube.com/embed/tPsJPtrMpKA?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=4'},
 
               { type: 'Shorts', url: 'https://www.youtube.com/embed/iBF_mDFgtH4?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'Shorts', url: 'https://www.youtube.com/embed/K-bP87jsrW4?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'Shorts', url: 'https://www.youtube.com/embed/IzV-EoGxtME?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'Shorts', url: 'https://www.youtube.com/embed/08XyCs4yVEU?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'Shorts', url: 'https://www.youtube.com/embed/-fgL_rNwa5Y?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
+              { type: 'Shorts', url: 'https://www.youtube.com/embed/2dz6YhII_x4?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},
               { type: 'Shorts', url: 'https://www.youtube.com/embed/4LeTZRKRE8Q?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=30'},
               
               { type: 'ShorterVideo', url: 'https://www.youtube.com/embed/SqE2J9V3a8A?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1'},

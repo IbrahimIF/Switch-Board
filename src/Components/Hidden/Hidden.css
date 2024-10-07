@@ -18,6 +18,19 @@
     100% { opacity: 1; }
   }
   
+  /* Goku image styling */
+.rock_image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
   
   /* Lancer image styling */
   .lancer_image {

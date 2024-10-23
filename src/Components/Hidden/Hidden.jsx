@@ -8,6 +8,7 @@ import Laugh from '../../assets/audio/Switch sound/Lancer Laugh.mp3';
 import Goku from '../../assets/image/Thate One Goku PNG.png';
 import Rock from '../../assets/image/The rock.png'
 import Sonic from '../../assets/image/sonic.jpg'
+import Spoopy from '../../assets/image/skeleton-doot.gif'
 
 import Lancer0 from '../../assets/image/Lancer_Empty.png'
 import Lancer1 from '../../assets/image/Lancer_1.gif';
@@ -17,12 +18,13 @@ import Lancer2_static from '../../assets/image/Lancer_2.png';
 import Lancer3 from '../../assets/image/Lancer_Ending.gif';
 import Lancer3_static from '../../assets/image/Lancer_Ending.png';
 
-function Hidden({counter, setCounter}) {
+function Hidden({counter, setCounter, setIsDark, isDark}) {
 const navigate = useNavigate();
 const [isGoku, setIsGoku] = useState(false);
 const [isLancer, setIsLancer] = useState(false);
 const [isRock, setIsRock] = useState(false);
 const [isSonic, setIsSonic] = useState(false);
+const [isSpooky, setIsSpooky] = useState(false);
 const [currentGifIndex, setCurrentGifIndex] = useState(0);
 const [audioLaugh] = useState(new Audio(Laugh));
 
@@ -88,7 +90,7 @@ useEffect(() => {
         return () => {
             clearTimeout(timer);
         };
-    }if (counter === 25){
+    } if (counter === 25){
         setIsSonic(true);
         const timer = setTimeout(() => {
             setIsSonic(false);
@@ -97,14 +99,26 @@ useEffect(() => {
         return () => {
             clearTimeout(timer);
         };
-
-    } else {
+    } if (counter === 28){
+        setIsDark(true);
+    } if (counter === 29){
+        setIsSpooky(true);
+        const timer = setTimeout(() => {
+            setIsSpooky(false);
+            setCounter(0);
+        }, 1300);
+        return () => {
+            clearTimeout(timer);
+        };
+    }else {
         setIsGoku(false)
         setIsRock(false)
         setIsLancer(false)
-        setIsSonic(false);
+        setIsSonic(false)
+        setIsDark(false)
+        setIsSpooky(false)
     }
-}, [counter, currentGifIndex, setCounter, audioLaugh, navigate]);
+}, [counter, currentGifIndex, setCounter, audioLaugh, navigate, setIsDark, isDark]);
 
 return (
     <>
@@ -126,6 +140,13 @@ return (
         {isRock && (
           <div className="rock_image">
             <img src={Rock}/>
+          </div>
+        )}
+
+        {/* skeleton image div */}
+        {isSpooky && (
+          <div className="rock_image">
+            <img src={Spoopy}/>
           </div>
         )}
 

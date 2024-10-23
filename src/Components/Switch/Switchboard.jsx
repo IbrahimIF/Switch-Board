@@ -33,8 +33,9 @@ import twentyfive from '../../assets/audio/Switch sound/Gangsta-paradise.mp3';
 import twentysix from '../../assets/audio/Switch sound/eggnouncement.mp3';
 import twentyseven from '../../assets/audio/Switch sound/gmod-tool-gun.mp3';
 import twentyseven1 from '../../assets/audio/Switch sound/gmod-ragdoll.mp3';
-import twentyeight from '../../assets/audio/Switch sound/burger.mp3';
 import empty from '../../assets/audio/empty-sound.mp3';
+import twentynine from '../../assets/audio/Switch sound/skull-trumpet.mp3';
+import thirty from '../../assets/audio/Switch sound/burger.mp3';
 
 
 function SwitchBoard({counter, setCounter}) {
@@ -73,9 +74,11 @@ function SwitchBoard({counter, setCounter}) {
   const [audio27] = useState(new Audio(twentyseven));
   const [audio271] = useState(new Audio(twentyseven1));
   const [audio28] = useState(new Audio(empty));
+  const [audio29] = useState(new Audio(twentynine));
+  const [audio30] = useState(new Audio(thirty));
 
   const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15, audio16, audio17, audio18,
-    audio19, audio20, audio21, audio22, audio23, audio24, audio25, audio26, audio27, audio28];
+    audio19, audio20, audio21, audio22, audio23, audio24, audio25, audio26, audio27, audio28, audio29, audio30];
 
   const switchSound = () => {
     const audio = new Audio(light);
@@ -178,6 +181,8 @@ function SwitchBoard({counter, setCounter}) {
       <Switch onClick={() => {switchSound(); toggleSwitch(audio26, 26)}} isActive={counter === 26} />
       <Switch onClick={() => {switchSound(); TwentySeven()}} isActive={counter === 27} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio28, 28)}} isActive={counter === 28} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio29, 29)}} isActive={counter === 29} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio30, 30)}} isActive={counter === 30} />
   </>
   )
 }

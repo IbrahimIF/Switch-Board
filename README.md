@@ -59,6 +59,7 @@ This project includes:
 
 - [Achievement CSS](https://codepen.io/uenify/pen/KxzKVd)
 - [Light Switch CSS](https://codepen.io/Katzwinkel/pen/yLNbwVV)
-
+- [Airport Slider Animation](https://codepen.io/jesuskinto/pen/wvJeVez)
+- [Tooltip App CSS](https://uiverse.io/wilsondesouza/brave-earwig-75)
 
 ---

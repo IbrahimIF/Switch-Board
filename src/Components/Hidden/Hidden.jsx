@@ -2,21 +2,21 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Hidden.css';
-import Laugh from '../../assets/audio/Switch sound/Lancer Laugh.mp3';
+import Laugh from '/assets/audio/Switch sound/Lancer Laugh.mp3';
 
 /* Image */
-import Goku from '../../assets/image/Thate One Goku PNG.png';
-import Rock from '../../assets/image/The rock.png'
-import Sonic from '../../assets/image/sonic.jpg'
-import Spoopy from '../../assets/image/skeleton-doot.gif'
+import Goku from '/assets/image/Thate One Goku PNG.png';
+import Rock from '/assets/image/The rock.png';
+import Sonic from '/assets/image/sonic.jpg';
+import Spoopy from '/assets/image/skeleton-doot.gif';
 
-import Lancer0 from '../../assets/image/Lancer_Empty.png'
-import Lancer1 from '../../assets/image/Lancer_1.gif';
-import Lancer1_static from '../../assets/image/Lancer_1.png';
-import Lancer2 from '../../assets/image/Lancer_2.gif';
-import Lancer2_static from '../../assets/image/Lancer_2.png';
-import Lancer3 from '../../assets/image/Lancer_Ending.gif';
-import Lancer3_static from '../../assets/image/Lancer_Ending.png';
+import Lancer0 from '/assets/image/Lancer_Empty.png';
+import Lancer1 from '/assets/image/Lancer_1.gif';
+import Lancer1_static from '/assets/image/Lancer_1.png';
+import Lancer2 from '/assets/image/Lancer_2.gif';
+import Lancer2_static from '/assets/image/Lancer_2.png';
+import Lancer3 from '/assets/image/Lancer_Ending.gif';
+import Lancer3_static from '/assets/image/Lancer_Ending.png';
 
 function Hidden({counter, setCounter, setIsDark, isDark}) {
 const navigate = useNavigate();
@@ -101,6 +101,11 @@ useEffect(() => {
         };
     } if (counter === 28){
         setIsDark(true);
+        const timer = setTimeout(() => {
+        }, 1300);
+        return () => {
+            clearTimeout(timer);
+        };
     } if (counter === 29){
         setIsSpooky(true);
         const timer = setTimeout(() => {

@@ -3,45 +3,55 @@ import {useState} from 'react';
 import Switch from './switch';
 
 /* Audio imports */
-import light from '../../assets/audio/light-switch.mp3';
-import one from '../../assets/audio/Switch sound/Youre-too-slow-Sonic.mp3';
-import two from '../../assets/audio/Switch sound/Handsome-Jack.mp3';
-import three from '../../assets/audio/Switch sound/IDubbbzTV.mp3';
-import four from '../../assets/audio/Switch sound/Minecraft-Cow.mp3';
-import five from '../../assets/audio/Switch sound/Roblox-OOF.mp3';
-import six from '../../assets/audio/Switch sound/What-the-dog-doin.mp3';
-import seven from '../../assets/audio/Switch sound/Goku-drip.mp3';
-import eight from '../../assets/audio/Switch sound/Realistic-Knocking.mp3';
-import nine from '../../assets/audio/Switch sound/discord-call-sound.mp3';
-import nine1 from '../../assets/audio/Switch sound/discord-notification.mp3';
-import ten from '../../assets/audio/Switch sound/get-out-tuco.mp3';
-import eleven from '../../assets/audio/Switch sound/Darth-Vader-Screaming.mp3';
-import twelve from '../../assets/audio/Switch sound/vine-boom.mp3';
-import thirteen from '../../assets/audio/Switch sound/ur-phone-ringing.mp3';
-import fourteen from '../../assets/audio/Switch sound/Rickrolled.mp3';
-import fifteen from '../../assets/audio/Switch sound/error.mp3';
-import sixteen from '../../assets/audio/Switch sound/Lancer.mp3';
-import seventeen from '../../assets/audio/Switch sound/Goat-Scream.mp3';
-import eighteen from '../../assets/audio/Switch sound/OH-MY-FAVORITE.mp3';
-import nineteen from '../../assets/audio/Switch sound/Enemy-Spider.mp3';
-import twenty from '../../assets/audio/Switch sound/Its-not-just-a-boulder.mp3';
-import twentyone from '../../assets/audio/Switch sound/Green-hill-zone-bass-boosted.mp3';
-import twentytwo from '../../assets/audio/Switch sound/bender-do-a-flip.mp3';
-import twentythree from '../../assets/audio/Switch sound/Michael-Bay.mp3';
-import twentyfour from '../../assets/audio/Switch sound/quack.mp3';
-import twentyfive from '../../assets/audio/Switch sound/Gangsta-paradise.mp3';
-import twentysix from '../../assets/audio/Switch sound/eggnouncement.mp3';
-import twentyseven from '../../assets/audio/Switch sound/gmod-tool-gun.mp3';
-import twentyseven1 from '../../assets/audio/Switch sound/gmod-ragdoll.mp3';
-import empty from '../../assets/audio/empty-sound.mp3';
-import twentynine from '../../assets/audio/Switch sound/skull-trumpet.mp3';
-import thirty from '../../assets/audio/Switch sound/burger.mp3';
+import light from '/assets/audio/light-switch.mp3';
+import one from '/assets/audio/Switch sound/Youre-too-slow-Sonic.mp3';
+import two from '/assets/audio/Switch sound/Handsome-Jack.mp3';
+import three from '/assets/audio/Switch sound/IDubbbzTV.mp3';
+import four from '/assets/audio/Switch sound/Minecraft-Cow.mp3';
+import five from '/assets/audio/Switch sound/Roblox-OOF.mp3';
+import six from '/assets/audio/Switch sound/What-the-dog-doin.mp3';
+import seven from '/assets/audio/Switch sound/Goku-drip.mp3';
+import eight from '/assets/audio/Switch sound/Realistic-Knocking.mp3';
+import nine from '/assets/audio/Switch sound/discord-call-sound.mp3';
+import nine1 from '/assets/audio/Switch sound/discord-notification.mp3';
+import ten from '/assets/audio/Switch sound/get-out-tuco.mp3';
+import eleven from '/assets/audio/Switch sound/Darth-Vader-Screaming.mp3';
+import twelve from '/assets/audio/Switch sound/vine-boom.mp3';
+import thirteen from '/assets/audio/Switch sound/ur-phone-ringing.mp3';
+import fourteen from '/assets/audio/Switch sound/Rickrolled.mp3';
+import fifteen from '/assets/audio/Switch sound/error.mp3';
+import sixteen from '/assets/audio/Switch sound/Lancer.mp3';
+import seventeen from '/assets/audio/Switch sound/Goat-Scream.mp3';
+import eighteen from '/assets/audio/Switch sound/OH-MY-FAVORITE.mp3';
+import nineteen from '/assets/audio/Switch sound/Enemy-Spider.mp3';
+import twenty from '/assets/audio/Switch sound/Its-not-just-a-boulder.mp3';
+import twentyone from '/assets/audio/Switch sound/Green-hill-zone-bass-boosted.mp3';
+import twentytwo from '/assets/audio/Switch sound/bender-do-a-flip.mp3';
+import twentythree from '/assets/audio/Switch sound/Michael-Bay.mp3';
+import twentyfour from '/assets/audio/Switch sound/quack.mp3';
+import twentyfive from '/assets/audio/Switch sound/Gangsta-paradise.mp3';
+import twentysix from '/assets/audio/Switch sound/eggnouncement.mp3';
+import twentyseven from '/assets/audio/Switch sound/gmod-tool-gun.mp3';
+import twentyseven1 from '/assets/audio/Switch sound/gmod-ragdoll.mp3';
+import twentynine from '/assets/audio/Switch sound/skull-trumpet.mp3';
+import thirty from '/assets/audio/Switch sound/burger.mp3';
+import thirtyone from '/assets/audio/Switch sound/20th_century_fox.mp3';
 
+/*homer*/
+import thirtytwo from '/assets/audio/Switch sound/Homer/boring.mp3';
+import thirtytwo1 from '/assets/audio/Switch sound/Homer/doh.mp3';
+import thirtytwo2 from '/assets/audio/Switch sound/Homer/laugh.mp3';
+import thirtytwo3 from '/assets/audio/Switch sound/Homer/nerrrrrdddddd.mp3';
+import thirtytwo4 from '/assets/audio/Switch sound/Homer/scream.mp3';
+import thirtytwo5 from '/assets/audio/Switch sound/Homer/woohoo.mp3';
+
+import empty from '/assets/audio/empty-sound.mp3';
 
 function SwitchBoard({counter, setCounter}) {
   const [Start, setStart] = useState(true);
   const [discordCounter, setDiscordCounter] = useState(9);
   const [gmodCounter, setGmodCounter] = useState(0);
+  const [homerCounter, setHomerCounter] = useState(0);
 
 
   const [audio1] = useState(new Audio(one));
@@ -76,9 +86,16 @@ function SwitchBoard({counter, setCounter}) {
   const [audio28] = useState(new Audio(empty));
   const [audio29] = useState(new Audio(twentynine));
   const [audio30] = useState(new Audio(thirty));
+  const [audio31] = useState(new Audio(thirtyone));
+  const [audio32] = useState(new Audio(thirtytwo));
+  const [audio321] = useState(new Audio(thirtytwo1));
+  const [audio322] = useState(new Audio(thirtytwo2));
+  const [audio323] = useState(new Audio(thirtytwo3));
+  const [audio324] = useState(new Audio(thirtytwo4));
+  const [audio325] = useState(new Audio(thirtytwo5));
 
   const audioArray = [audio1, audio2, audio3, audio4, audio5, audio6, audio7, audio8, audio9, audio10, audio11, audio12, audio13, audio14, audio15, audio16, audio17, audio18,
-    audio19, audio20, audio21, audio22, audio23, audio24, audio25, audio26, audio27, audio28, audio29, audio30];
+    audio19, audio20, audio21, audio22, audio23, audio24, audio25, audio26, audio27, audio28, audio29, audio30, audio31, audio32];
 
   const switchSound = () => {
     const audio = new Audio(light);
@@ -151,6 +168,47 @@ function SwitchBoard({counter, setCounter}) {
     setStart(!Start); 
     };
 
+
+    const ThirtyTwo = () => {
+      if (Start) {
+        setCounter(32)
+        if (homerCounter === 0 || homerCounter === 6){
+          setHomerCounter(1)
+          audio32.play()
+        }if (homerCounter === 1){
+          setHomerCounter(2)
+          audio321.play()
+        }if (homerCounter === 2){
+          setHomerCounter(3)
+          audio322.play()
+        }if (homerCounter === 3){
+          setHomerCounter(4)
+          audio323.play()
+        }if (homerCounter === 4){
+          setHomerCounter(5)
+          audio324.play()
+        }if (homerCounter === 5){
+          setHomerCounter(6)
+          audio325.play()
+        }
+      } else {
+        audio32.pause();
+        audio32.currentTime = 0;
+        audio321.pause();
+        audio321.currentTime = 0;
+        audio322.pause();
+        audio322.currentTime = 0;
+        audio323.pause();
+        audio323.currentTime = 0;
+        audio324.pause();
+        audio324.currentTime = 0;
+        audio325.pause();
+        audio325.currentTime = 0;
+        setCounter(0);
+      }
+      setStart(!Start); 
+      };
+
   return (
   <>
       <Switch onClick={() => {switchSound(); toggleSwitch(audio1, 1)}} isActive={counter === 1} />
@@ -183,6 +241,9 @@ function SwitchBoard({counter, setCounter}) {
       <Switch onClick={() => {switchSound(); toggleSwitch(audio28, 28)}} isActive={counter === 28} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio29, 29)}} isActive={counter === 29} />
       <Switch onClick={() => {switchSound(); toggleSwitch(audio30, 30)}} isActive={counter === 30} />
+      <Switch onClick={() => {switchSound(); toggleSwitch(audio31, 31)}} isActive={counter === 31} />
+      <Switch onClick={() => {switchSound(); ThirtyTwo()}} isActive={counter === 32} />
+      {homerCounter}
   </>
   )
 }

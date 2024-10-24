@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect,} from "react";
 import "./RandomScreen.css";
-import michaelBay from '../../assets/video/Michael Bay.mp4'
+import michaelBay from '/assets/video/Michael Bay.mp4'
 function RandomScreen({counter, setCounter}) {
   const navigate = useNavigate();
   // Media state

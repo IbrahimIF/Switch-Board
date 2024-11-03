@@ -4,6 +4,8 @@ import { useState} from 'react';
 import SwitchBoard from './Switch/Switchboard';
 import Banner from './Banner/banner';
 import Hidden from './Hidden/Hidden';
+import Achievment from './Achievment/achievment';
+
 function Hub({counter, setCounter}) {
 
   const [isDark, setIsDark] = useState(false);
@@ -22,6 +24,8 @@ function Hub({counter, setCounter}) {
         <div className="switch_container"  >
           <SwitchBoard counter={counter} setCounter={setCounter} />
         </div>
+
+        <Achievment />
       </div>
     </>
   )

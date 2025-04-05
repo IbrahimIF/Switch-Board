@@ -1,0 +1,200 @@
+input[type="text"], 
+input[type="tel"], 
+input[type="number"], 
+input[type="email"], 
+select, 
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbbbbb;
+  border-radius: 0px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  resize: vertical;
+  height: 60px;
+  font-size: 1.2em;
+  font-family: "Raleway", sans-serif;
+  font-variant-numeric: lining-nums;
+}
+
+
+textarea {
+  height: 100px;
+}
+
+label {
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+input[type=submit] {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border: 1px solid ;
+  border-radius: 0px;
+  cursor: pointer;
+  /* border-color: #044caa; */
+  border-color: hsl(214, 97%, 59%);
+  transition: 0.2s ease-in-out;
+}
+
+input[type=submit]:hover {
+  /* background-color: #45a049; */
+  background-color: hsl(214, 97%, 59%);
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+
+
+.Contact__Container{
+  display: flex;
+  display: -webkit-box;      /* Older Safari versions */
+  display: -ms-flexbox;      /* IE 10 */
+  display: -webkit-flex;     /* Safari 6.1+ */
+  justify-content: center; /* Distributes space between the children */
+  align-items: flex-start; /* Aligns items to the start of the container */
+  flex-wrap: nowrap; /* Ensures items don't wrap to the next line */
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  /* align-items: center; */
+  /* height: 50vmax; */
+}
+
+.content-wrapper {
+  display: flex;
+display: -webkit-box;      /* Older Safari versions */
+display: -ms-flexbox;      /* IE 10 */
+display: -webkit-flex;     /* Safari 6.1+ */
+  /* align-items: center; */
+  max-width: 1400px;
+} 
+
+.Contact__Text{
+  flex: 1; /* Takes up available space on the left */
+  /* display: flex; */
+  flex-wrap: wrap;
+  /* align-items: center;  */
+  padding-right: 50px; /* Adds space between text and input */
+  padding-top: 50px;
+}
+.Contact__Text > h1 {
+  font-weight: 350;
+  font-size: 2.5em;
+}
+.Contact__Text > h3 {
+  margin-top: 6vmax;
+}
+
+.Contact__Input{
+  flex: 1; /* Takes up available space on the right */
+  display: flex;
+display: -webkit-box;      /* Older Safari versions */
+display: -ms-flexbox;      /* IE 10 */
+display: -webkit-flex;     /* Safari 6.1+ */
+  align-items: center; /* Centers items vertically */
+  padding-left: 20px; /* Adds space between input and text */
+  padding-top: 50px;
+}
+
+.Contact__Input--Name{
+  display: flex;
+display: -webkit-box;      /* Older Safari versions */
+display: -ms-flexbox;      /* IE 10 */
+display: -webkit-flex;     /* Safari 6.1+ */
+  justify-content: space-between;
+}
+
+.Contact__Input--Name label{
+  display: flex;
+display: -webkit-box;      /* Older Safari versions */
+display: -ms-flexbox;      /* IE 10 */
+display: -webkit-flex;     /* Safari 6.1+ */
+
+}
+
+.first-name, .last-name {
+  width: 49%;
+}
+
+.hours-container {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+strong {
+  font-weight: 600;
+}
+
+span {
+  word-spacing: 2px;
+}
+
+
+@media (max-width: 700px) {
+  .content-wrapper{
+    flex-direction: column;
+  }
+
+  .Contact__Container{
+    padding: 20px;
+  }
+
+  .Contact__Input{
+    padding-left: 0px;
+    padding-top: 65px;
+  }
+  
+
+  .Contact__Text{
+    padding-right: 0px; 
+    padding-top: 0px;
+  }
+
+}
+
+@media (max-width: 340px) {
+
+}
+
+
+svg {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 2s linear infinite;
+ }
+ 
+ circle {
+  fill: none;
+  stroke: hsl(214, 97%, 59%);
+  stroke-width: 2;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+ }
+ 
+ @keyframes rotate4 {
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+ 
+ @keyframes dash4 {
+  0% {
+   stroke-dasharray: 1, 200;
+   stroke-dashoffset: 0;
+  }
+ 
+  50% {
+   stroke-dasharray: 90, 200;
+   stroke-dashoffset: -35px;
+  }
+ 
+  100% {
+   stroke-dashoffset: -125px;
+  }
+ }

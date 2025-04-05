@@ -35,41 +35,14 @@
 }
 
 
-
-/* Goku image styling */
-.goku_image {
-  position: absolute;
+.container_hidden{
+  display: flex ;
+  position: fixed;
+  pointer-events: none;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  pointer-events: none;
-  animation: fadeIn 7s;
+  z-index: 100;
 }
-
-
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-/* Lancer image styling */
-.lancer_image {
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  pointer-events: none;
-}
-
 
 
 .overlay {

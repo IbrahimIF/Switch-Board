@@ -2,7 +2,7 @@
 import './App.css';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Hub from './Components/Hub';
+import Main from './MainLayout/mainLayout';
 import RandomScreen from './Components/RandomScreen/RandomScreen';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
       <div className="app-container">
         <Routes>
-          <Route path="/" element={<Hub counter={counter} setCounter={setCounter}/>} />
+          <Route path="/" element={<Main counter={counter} setCounter={setCounter}/>} />
           <Route path="/Random" element={<RandomScreen counter={counter} setCounter={setCounter}/>} />
         </Routes>
       </div>

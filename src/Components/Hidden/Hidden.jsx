@@ -161,7 +161,6 @@ return (
             <img src={lancerGifs[currentGifIndex]}/>
           </div>
         )}
-
     </>
 )
 }

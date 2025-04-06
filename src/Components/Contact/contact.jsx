@@ -61,37 +61,73 @@ function Contact() {
   };
   
   return (
-    <div className={`fade-in ${fadeIn ? 'active' : ''} Contact__Container `}>
-      <div className='content-wrapper'>
-        <div className='Contact__Text'>
-          <h1>Get In Touch</h1>
-          <span>We’re here to help you bring your architectural vision to life. Whether you're planning a new project, need expert advice, or want to learn more about our services, please call us or send us a message using the form.</span>
+    <>
+    
+    <div>
+      <div className='content-title'> 
+        <h1>text</h1>
+      </div>
+      <div className="form-container">
+        <div className='form__title'>
+          <h3>text</h3>
         </div>
-        
-        <div className='Contact__Input'>
-          <form action="https://formsubmit.co/info@pinnaclestudioarchitecture.co.uk" method="POST" onSubmit={handleSubmit}>
-            <div className='Contact__Input--Name'>
+        <form action="https://formsubmit.co/ibzdagamer@gmail.com" method="POST" onSubmit={handleSubmit}>
+          <div className='form__Input--container'>
+            <div className='form__Input--Name'>
+                <div className="input-Animated">
+                  <input type="text" name="text" className="input" placeholder="Enter Name"
+    
+  
+                  />
+                  <div className="highlight"></div>
+                </div>
+      
+                <div className="input-Animated">
+                  <input type="text" name="text" className="input" placeholder="Enter Text"
+  
+  
+                  />
+                  <div className="highlight"></div>
+                </div>
+            </div>
+            <div className='form__Input--Message'>
+              <label className='label'>Message</label>
+              <textarea className="message-box" name="message" placeholder="" rows="6" required></textarea>
+              <input  type="hidden"  name="_next" value={Stay} />
+              <input type="hidden" name="_captcha" value="false"></input>
+            </div>
+          </div>
+          <div className='form-submit_container'>
 
+          </div>
+        </form>
+        <div className='form-link_container'></div>
+      </div>
+    </div>
+
+
+
+
+{/* 
+      <div className='content-wrapper'>
+        <div className='Contact__Input'>
+        <p className="title">text</p>
+          <form action="https://formsubmit.co/ibzdagamer@gmail.com" method="POST" onSubmit={handleSubmit}>
+
+            <div className='Contact__Input--Name'>
               <div className='field  first-name'>
-                <label> First Name </label>
-                <input type="text" id="fname" name="firstName" required placeholder=""></input>
+                <label> Username </label>
+                <input type="text" id="fname" name="username" required placeholder=""></input>
               </div>
 
               <div  className='field last-name'>
-                <label> Last Name </label>
-                <input type="text" id="fname" name="lastName" required placeholder=""></input>
+                <label> Email </label>
+                <input type="email" id="fname" name="Email" required placeholder=""></input>
               </div>
-
             </div>
 
-            <label>Email</label>
-            <input type="email" id="fname" name="Email" required placeholder=""></input>
-
-            <label>Contact Number</label>
-            <input type="tel" pattern="[0-9]*" id="Phonenumber" name="PhoneNumber" required placeholder=""></input>
-            
             <label>Message</label>
-            <textarea name="message" placeholder="" rows="4" required></textarea>
+            <textarea name="message" placeholder="" rows="6" required></textarea>
             <input  type="hidden"  name="_next" value={Stay} />
             <input type="hidden" name="_captcha" value="false"></input>
 
@@ -113,7 +149,8 @@ function Contact() {
           {showTick && <TickAnimation />}
         </div>
       </div>
-    </div>
+*/}
+    </>
   );
 }
 

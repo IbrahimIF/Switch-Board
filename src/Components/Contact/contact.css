@@ -1,9 +1,172 @@
+.content-title{
+  display: flex;
+  justify-content: center;
+}
+
+
+.form-container{
+  background-color: black;
+  border-radius: 28px;
+
+}
+
+.form__title{
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+}
+
+
+
+.form__Input--container{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form__Input--Name{
+  display: flex;
+
+  color: aliceblue;
+  position: relative;
+  width: 70vh;
+  height: 10vh;
+  transition: 1s;
+
+  
+
+  justify-content: space-evenly;
+
+
+
+}
+
+.form__Input--Message{
+  display: flex;
+  justify-content: center;
+  
+}
+
+label {
+  font-weight: 300;
+  font-size: 1.2em;
+  color: aliceblue;
+}
+
+.message-box{
+  width: 100%;
+  padding:
+12px;
+  border:
+1px solid #bbbbbb;
+  border-radius:
+0;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 20px;
+  resize: vertical;
+  height: 60px;
+  font-size: 1.2em;
+  font-family: Raleway,sans-serif;
+  font-variant-numeric: lining-nums;
+}
+
+.form-submit_container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  transition: 1s;
+}
+
+
+
+
+
+.form-link_container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+}
+
+
+
+
+
+
+
+.input-animated {
+  position: relative;
+}
+
+.input {
+  font-size: 1em;
+  padding: 0.6em 1em;
+  border: none;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  max-width: 200px;
+  color: #333;
+}
+
+.input:hover {
+  background-color: #f2f2f2;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input::placeholder {
+  color: #999;
+}
+
+.highlight {
+  position: relative;
+  top: 5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dcdcdc;
+  transition: width 0.3s ease;
+}
+
+.input:focus + .highlight {
+  width: 100%;
+}
+
+/* Optional: Animation on focus */
+@keyframes input-focus {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  }
+
+  to {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.input:focus {
+  animation: input-focus 0.3s ease;
+}
+
+/*
 input[type="text"], 
 input[type="tel"], 
 input[type="number"], 
 input[type="email"], 
 select, 
 textarea {
+  background-color: white;
+  color: black;
   width: 100%;
   padding: 12px;
   border: 1px solid #bbbbbb;
@@ -35,13 +198,13 @@ input[type=submit] {
   border: 1px solid ;
   border-radius: 0px;
   cursor: pointer;
-  /* border-color: #044caa; */
+
   border-color: hsl(214, 97%, 59%);
   transition: 0.2s ease-in-out;
 }
 
 input[type=submit]:hover {
-  /* background-color: #45a049; */
+
   background-color: hsl(214, 97%, 59%);
   color: white;
   transition: 0.2s ease-in-out;
@@ -51,68 +214,55 @@ input[type=submit]:hover {
 
 .Contact__Container{
   display: flex;
-  display: -webkit-box;      /* Older Safari versions */
-  display: -ms-flexbox;      /* IE 10 */
-  display: -webkit-flex;     /* Safari 6.1+ */
-  justify-content: center; /* Distributes space between the children */
-  align-items: flex-start; /* Aligns items to the start of the container */
-  flex-wrap: nowrap; /* Ensures items don't wrap to the next line */
+  display: -webkit-box;      
+  display: -ms-flexbox;      
+  display: -webkit-flex;     
+  justify-content: center; 
+  align-items: flex-start; 
+  flex-wrap: nowrap;
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #ff8888;
   padding: 20px;
-  /* align-items: center; */
-  /* height: 50vmax; */
 }
 
 .content-wrapper {
   display: flex;
-display: -webkit-box;      /* Older Safari versions */
-display: -ms-flexbox;      /* IE 10 */
-display: -webkit-flex;     /* Safari 6.1+ */
-  /* align-items: center; */
-  max-width: 1400px;
+  display: -webkit-box;     
+  display: -ms-flexbox; 
+  display: -webkit-flex; 
+  justify-content: center;
+  align-items: flex-start; 
+  flex-wrap: nowrap; 
+  border-radius: 5px;
+  background-color: #ff8888;
+  padding: 20px;
 } 
 
-.Contact__Text{
-  flex: 1; /* Takes up available space on the left */
-  /* display: flex; */
-  flex-wrap: wrap;
-  /* align-items: center;  */
-  padding-right: 50px; /* Adds space between text and input */
-  padding-top: 50px;
-}
-.Contact__Text > h1 {
-  font-weight: 350;
-  font-size: 2.5em;
-}
-.Contact__Text > h3 {
-  margin-top: 6vmax;
-}
-
 .Contact__Input{
-  flex: 1; /* Takes up available space on the right */
-  display: flex;
-display: -webkit-box;      /* Older Safari versions */
-display: -ms-flexbox;      /* IE 10 */
-display: -webkit-flex;     /* Safari 6.1+ */
-  align-items: center; /* Centers items vertically */
-  padding-left: 20px; /* Adds space between input and text */
   padding-top: 50px;
 }
 
 .Contact__Input--Name{
   display: flex;
-display: -webkit-box;      /* Older Safari versions */
-display: -ms-flexbox;      /* IE 10 */
-display: -webkit-flex;     /* Safari 6.1+ */
+display: -webkit-box;      
+display: -ms-flexbox;      
+display: -webkit-flex;     
   justify-content: space-between;
 }
 
 .Contact__Input--Name label{
   display: flex;
-display: -webkit-box;      /* Older Safari versions */
-display: -ms-flexbox;      /* IE 10 */
-display: -webkit-flex;     /* Safari 6.1+ */
+display: -webkit-box;      
+display: -ms-flexbox;      
+display: -webkit-flex;     
+
+}
+
+.title{
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
 
 }
 
@@ -198,3 +348,7 @@ svg {
    stroke-dashoffset: -125px;
   }
  }
+
+
+
+ */

@@ -26,7 +26,7 @@ function Hub({counter, setCounter}) {
         <div className="switch_container"  >
           <SwitchBoard counter={counter} setCounter={setCounter} />
         </div>
-        <Achievment />
+        {/*<Achievment />*/}
 
       </div>
 

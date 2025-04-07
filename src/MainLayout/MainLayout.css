@@ -1,36 +1,49 @@
-.TextTest{
-    height: 1000px;
-    color: black;
+
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  position: relative;
 }
 
-.texts{
-    position: fixed;
+.hub-overlay.visible{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.5s ease;
 }
 
-.scroll-blur-container {
-    position: relative;
-  }
-  
-  .content {
-    transition: filter 0.3s ease;
-  }
-  
-  .content.blurred {
-    filter: blur(5px);
-    pointer-events: none; /* Disable interactions */
-  }
 
 
-.overlay_contact {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(5px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
+.contact-trigger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
 }
+
+/* Contact overlay styling */
+.contact-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+}
+
+.contact-overlay.visible {
+  opacity: 1;
+}
+

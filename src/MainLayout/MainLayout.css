@@ -1,5 +1,26 @@
+.main-layout{
+  position: relative;
+}
+
+.main-overlay.blurred * {
+  pointer-events: none !important;
+}
+
+.main-overlay{
+  width: 100%;
+  min-height: 100vh;
+  transition: filter 0.5s ease;
+}
+
+
+.main-overlay.blurred {
+  filter: blur(5px);
+}
+
 
 .contact-container{
+  margin-top: 200px;
+  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -7,43 +28,32 @@
   position: relative;
 }
 
-.hub-overlay.visible{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px);
-  opacity: 0;
-  z-index: 10;
-  transition: opacity 0.5s ease;
-}
 
-
-
-.contact-trigger {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-}
-
-/* Contact overlay styling */
 .contact-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 100; 
   opacity: 0;
-  z-index: 10;
-  transition: opacity 0.5s ease;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
 }
 
 .contact-overlay.visible {
   opacity: 1;
+  pointer-events: auto;
 }
+
+.contact-trigger{
+  position: absolute;
+  top: 50%; 
+  left: 0;
+  width: 100%;
+  height: 1px; 
+  transform: translateY(-50%); 
+  background: transparent; 
+  z-index: 10;
+}
+
 

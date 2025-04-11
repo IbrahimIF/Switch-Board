@@ -1,22 +1,25 @@
 .content-title{
   display: flex;
   justify-content: center;
+  color: black;
 }
 
 
 .form-container{
-  background-color: black;
-  border-radius: 28px;
-
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #969696;
+  border: 2px solid #525252;
+  border-radius: 15px;
 }
 
 .form__title{
   display: flex;
   justify-content: center;
   color: aliceblue;
+  padding: 10px;
 }
-
-
 
 .form__Input--container{
   display: flex;
@@ -26,46 +29,39 @@
 
 .form__Input--Name{
   display: flex;
-
   color: aliceblue;
   position: relative;
   width: 70vh;
-  height: 10vh;
+  padding: 15px;
   transition: 1s;
-
-  
-
   justify-content: space-evenly;
-
-
-
 }
 
 .form__Input--Message{
-  display: flex;
+  display: flex ;
   justify-content: center;
-  
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 label {
   font-weight: 300;
   font-size: 1.2em;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
 }
 
 .message-box{
-  width: 100%;
-  padding:
-12px;
-  border:
-1px solid #bbbbbb;
-  border-radius:
-0;
+  width: 80%;
+  padding: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid #525252;
+  border-radius: 0;
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 20px;
   resize: vertical;
-  height: 60px;
   font-size: 1.2em;
   font-family: Raleway,sans-serif;
   font-variant-numeric: lining-nums;
@@ -101,7 +97,7 @@ label {
   position: relative;
 }
 
-.input {
+.input--name {
   font-size: 1em;
   padding: 0.6em 1em;
   border: none;
@@ -113,17 +109,17 @@ label {
   color: #333;
 }
 
-.input:hover {
+.input--name:hover {
   background-color: #f2f2f2;
 }
 
-.input:focus {
+.input--name:focus {
   outline: none;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.input::placeholder {
+.input--name::placeholder {
   color: #999;
 }
 
@@ -137,7 +133,7 @@ label {
   transition: width 0.3s ease;
 }
 
-.input:focus + .highlight {
+.input--name:focus + .highlight {
   width: 100%;
 }
 
@@ -154,7 +150,7 @@ label {
   }
 }
 
-.input:focus {
+.input--name:focus {
   animation: input-focus 0.3s ease;
 }
 

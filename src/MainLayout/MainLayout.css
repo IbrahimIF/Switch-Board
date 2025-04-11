@@ -31,13 +31,14 @@
 
 .contact-overlay {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 100; 
   opacity: 0;
   transition: opacity 1.5s ease;
   pointer-events: none;
+  width: 80%;
 }
 
 .contact-overlay.visible {

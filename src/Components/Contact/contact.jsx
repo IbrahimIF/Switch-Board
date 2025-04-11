@@ -62,31 +62,23 @@ function Contact() {
   
   return (
     <>
-    
-    <div>
       <div className='content-title'> 
-        <h1>text</h1>
+        <h1> You have reached the end of the page</h1>
       </div>
       <div className="form-container">
         <div className='form__title'>
-          <h3>text</h3>
+          <h3>Drop me a message, suggesting other ideas</h3>
         </div>
         <form action="https://formsubmit.co/ibzdagamer@gmail.com" method="POST" onSubmit={handleSubmit}>
           <div className='form__Input--container'>
             <div className='form__Input--Name'>
                 <div className="input-Animated">
-                  <input type="text" name="text" className="input" placeholder="Enter Name"
-    
-  
-                  />
+                  <input type="text" name="text" className="input--name" placeholder="Enter Name"/>
                   <div className="highlight"></div>
                 </div>
       
                 <div className="input-Animated">
-                  <input type="text" name="text" className="input" placeholder="Enter Text"
-  
-  
-                  />
+                  <input type="text" name="text" className="input--name" placeholder="Enter Text"/>
                   <div className="highlight"></div>
                 </div>
             </div>
@@ -103,7 +95,7 @@ function Contact() {
         </form>
         <div className='form-link_container'></div>
       </div>
-    </div>
+
 
 
 

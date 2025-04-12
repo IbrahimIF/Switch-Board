@@ -2,7 +2,7 @@
 //import React, { } from 'react';
 import {useEffect, useState} from 'react';
 import './banner.css'
-import Link from '../Github/Link';
+
 
 
 function Banner({counter}) {
@@ -26,7 +26,6 @@ function Banner({counter}) {
         </div>
       </div>
     </div>
-    <Link/>
     </>
   )
 }

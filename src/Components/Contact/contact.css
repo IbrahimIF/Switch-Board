@@ -1,3 +1,8 @@
+.honeypot {
+  display: none;
+}
+
+
 .content-title{
   display: flex;
   justify-content: center;
@@ -9,15 +14,18 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #969696;
+  background: #d5d5d5;
   border: 2px solid #525252;
   border-radius: 15px;
+  align-items: center;
+  padding: 5px;
+  padding-bottom: 30px;
 }
 
 .form__title{
   display: flex;
   justify-content: center;
-  color: aliceblue;
+  color: #414141;
   padding: 10px;
 }
 
@@ -29,7 +37,6 @@
 
 .form__Input--Name{
   display: flex;
-  color: aliceblue;
   position: relative;
   width: 70vh;
   padding: 15px;
@@ -45,19 +52,19 @@
   align-items: center;
 }
 
-label {
-  font-weight: 300;
-  font-size: 1.2em;
-  color: rgb(0, 0, 0);
+.label{
+  color: #414141;
 }
-
 .message-box{
+  border-radius: 6px;
   width: 80%;
+  color: #333;
   padding: 12px;
   overflow: hidden;
-  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f8f8;
   border: 2px solid #525252;
-  border-radius: 0;
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 20px;
@@ -78,20 +85,12 @@ label {
 
 
 
-
-
 .form-link_container{
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100px;
 }
-
-
-
-
-
-
 
 .input-animated {
   position: relative;
@@ -154,165 +153,21 @@ label {
   animation: input-focus 0.3s ease;
 }
 
-/*
-input[type="text"], 
-input[type="tel"], 
-input[type="number"], 
-input[type="email"], 
-select, 
-textarea {
-  background-color: white;
-  color: black;
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #bbbbbb;
-  border-radius: 0px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 20px;
-  resize: vertical;
-  height: 60px;
-  font-size: 1.2em;
-  font-family: "Raleway", sans-serif;
-  font-variant-numeric: lining-nums;
-}
 
 
-textarea {
-  height: 100px;
-}
-
-label {
-  font-weight: 300;
-  font-size: 1.2em;
-}
-
-input[type=submit] {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  padding: 12px 20px;
-  border: 1px solid ;
-  border-radius: 0px;
-  cursor: pointer;
-
-  border-color: hsl(214, 97%, 59%);
-  transition: 0.2s ease-in-out;
-}
-
-input[type=submit]:hover {
-
-  background-color: hsl(214, 97%, 59%);
-  color: white;
-  transition: 0.2s ease-in-out;
-}
-
-
-
-.Contact__Container{
+.loading-icon{
   display: flex;
-  display: -webkit-box;      
-  display: -ms-flexbox;      
-  display: -webkit-flex;     
-  justify-content: center; 
-  align-items: flex-start; 
-  flex-wrap: nowrap;
-  border-radius: 5px;
-  background-color: #ff8888;
-  padding: 20px;
-}
-
-.content-wrapper {
-  display: flex;
-  display: -webkit-box;     
-  display: -ms-flexbox; 
-  display: -webkit-flex; 
+  height: 100%;
   justify-content: center;
-  align-items: flex-start; 
-  flex-wrap: nowrap; 
-  border-radius: 5px;
-  background-color: #ff8888;
-  padding: 20px;
-} 
-
-.Contact__Input{
-  padding-top: 50px;
 }
 
-.Contact__Input--Name{
-  display: flex;
-display: -webkit-box;      
-display: -ms-flexbox;      
-display: -webkit-flex;     
-  justify-content: space-between;
-}
-
-.Contact__Input--Name label{
-  display: flex;
-display: -webkit-box;      
-display: -ms-flexbox;      
-display: -webkit-flex;     
-
-}
-
-.title{
-  display: flex;
-  position: relative;
-  align-items: center;
-  width: 100%;
-
-}
-
-.first-name, .last-name {
-  width: 49%;
-}
-
-.hours-container {
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
-strong {
-  font-weight: 600;
-}
-
-span {
-  word-spacing: 2px;
-}
-
-
-@media (max-width: 700px) {
-  .content-wrapper{
-    flex-direction: column;
-  }
-
-  .Contact__Container{
-    padding: 20px;
-  }
-
-  .Contact__Input{
-    padding-left: 0px;
-    padding-top: 65px;
-  }
-  
-
-  .Contact__Text{
-    padding-right: 0px; 
-    padding-top: 0px;
-  }
-
-}
-
-@media (max-width: 340px) {
-
-}
-
-
-svg {
+.spin {
   width: 3.25em;
   transform-origin: center;
   animation: rotate4 2s linear infinite;
  }
- 
+
+
  circle {
   fill: none;
   stroke: hsl(214, 97%, 59%);
@@ -347,4 +202,37 @@ svg {
 
 
 
- */
+ .submitButtonContainer{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  transition: 1s;
+}
+
+.submitButton {
+  position: relative;
+  margin: 15px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #525252;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #1b1b1b;
+  width: 200px;
+  height: 50px;
+}
+
+.submitButton:hover {
+  color: rgb(3, 3, 3);
+  box-shadow: inset 0 -100px 0 0 #9d9d9d;
+  transition: 1s;
+}
+
+.submitButton:active {
+  transform: scale(0.9);
+}

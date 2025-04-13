@@ -67,7 +67,7 @@ function Contact() {
   return (
     <>
       <div className='content-title'> 
-        <h1>404: No more content found</h1>
+        <h1>404: Ran out of Light Switches.</h1>
       </div>
       <div className="form-container">
         <div className='form__title'>
@@ -94,9 +94,6 @@ function Contact() {
               <h3 className='label'>Message</h3>
               <textarea className="message-box" name="message" placeholder="" rows="6" required></textarea>
             </div>
-          </div>
-          <div className="file__Upload">
-            <input type="file" name="attachment" accept="image/png, image/jpeg, .pdf" />
           </div>
 
           <div className="submitButtonContainer">

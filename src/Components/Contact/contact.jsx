@@ -11,7 +11,6 @@ function Contact() {
   const [showTick, setShowTick] = useState(false);
   const [loader, setLoader] = useState(false);
   const [fail, setFail] = useState(false);
-  const badWords = naughtyWords.en
   const Stay = `${window.location.origin}`;
 
   useEffect(() => {
@@ -21,8 +20,17 @@ function Contact() {
  
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const message = event.target.message.value.toLowerCase();
     setLoader(true);
     setFail(false);
+
+    const blacklist = [...new Set(naughtyWords.en)];
+
+    if (blacklist.some(word => message.includes(word))) {
+      alert("Message contains blocked terms");
+      setLoader(false);
+      return;
+    }
 
     const formData = new FormData(event.target);
 
@@ -59,11 +67,11 @@ function Contact() {
   return (
     <>
       <div className='content-title'> 
-        <h1> You have reached the end of the page</h1>
+        <h1>404: No more content found</h1>
       </div>
       <div className="form-container">
         <div className='form__title'>
-          <h3>Drop me a message, suggesting other ideas</h3>
+          <h3>Drop me a message, suggesting other light-switch ideas or your thoughts</h3>
         </div>
 
         <form className={fadeIn ? 'fade-in' : ''} action="https://formsubmit.co/9f4f21002394762265c7f94d735714d4" method="POST" onSubmit={handleSubmit} encType="multipart/form-data">
@@ -91,12 +99,6 @@ function Contact() {
             <input type="file" name="attachment" accept="image/png, image/jpeg, .pdf" />
           </div>
 
-          {/* Hidden fields */}
-          <input type="hidden" name="_next" value={Stay} />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase"/>
-          <input type="hidden" name="_template" value="table" />
-
           <div className="submitButtonContainer">
             <button type="submit" className="submitButton" disabled={loader} >
               {loader ? (
@@ -115,6 +117,12 @@ function Contact() {
             </button>
             {showTick && <TickAnimation />}
           </div>
+
+          {/* Hidden fields */}
+          <input type="hidden" name="_next" value={Stay} />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
         </form>
         
         <Link/>

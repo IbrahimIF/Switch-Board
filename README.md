@@ -47,7 +47,7 @@ This project includes:
 - **Toggle Switch**: Interact with a switch that you can turn on and off, affecting different aspects of the project and doing using things.
 - **Hidden Secrets**: Discover hidden elements and secrets within the project for added fun and challenge.
 - **Achievments**: Unlock and view various achievements as you progress through the project.
-
+- **Form section**: Send me an email detailing your light switch ideas that you would like added.
 ----
 ## Technologies and Tools Utilised:
 
@@ -62,4 +62,8 @@ This project includes:
 - [Airport Slider Animation](https://codepen.io/jesuskinto/pen/wvJeVez)
 - [Tooltip App CSS](https://uiverse.io/wilsondesouza/brave-earwig-75)
 
+Form section:
+- [react intersection observer](https://github.com/thebuilder/react-intersection-observer)
+- [Form Submit](https://formsubmit.co/)
+- [naughty-words](https://www.npmjs.com/package/naughty-words)
 ---

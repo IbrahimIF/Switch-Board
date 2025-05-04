@@ -18,7 +18,20 @@ function RandomScreen({counter, setCounter}) {
             <iframe 
               width="900" 
               height="655" 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=7" 
+              src='https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=7' 
+              title="YouTube video player" 
+              allow=" autoplay; encrypted-media;">
+            </iframe>
+          </div>
+        );
+      } if (counter === 35) {
+        setTimeoutDuration(20000); // Set the timeout to 20 seconds
+        return (
+          <div style={{ pointerEvents: 'none' }}>
+            <iframe 
+              width="900" 
+              height="655" 
+              src='https://www.youtube.com/embed/5CB6-jeOc5Y?autoplay=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&rel=0&showinfo=1&start=2' 
               title="YouTube video player" 
               allow="autoplay; encrypted-media;">
             </iframe>
